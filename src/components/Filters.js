@@ -85,7 +85,7 @@ const Filters = () => {
                     name="color"
                     onClick={updateFilters}
                     data-color='all'
-                    lassName={`${color === 'all' ? 'all-btn active' : 'all btn'}`}
+                    className={`${color === 'all' ? 'all-btn active' : 'all-btn'}`}
                   >
                     all
                   </button>
@@ -120,7 +120,18 @@ const Filters = () => {
             />
           </div>
           {/* end of price */}
+          {/* shipping */}
+          <div className="form-control">
+            <label htmlFor="shipping"> free shipping </label>
+            <input type="checkbox" name="shipping" id="shipping"
+              onChange={updateFilters} checked={shipping} />
+          </div>
+          {/* end of shiping */}
         </form>
+        <button type='button' className='clear-btn' onClick={clearFilters}>
+          {' '}
+          clear filters
+        </button>
       </div>
     </Wrapper>
   )
