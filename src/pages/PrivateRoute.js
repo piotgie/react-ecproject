@@ -5,11 +5,11 @@ import { useUserContext } from '../context/user_context';
 
 const PrivateRoute = ({ children, ...rest }) => {
 
-  const {myUser} = useUserContext()
+  const {user} = useAuth0();
 
   return (
     <Route {...rest} render={()=> {
-      return myUser ? children : <Redirect to="/"></Redirect>
+      return user ? children : <Redirect to="/"></Redirect>
     }}></Route>
   );
 };
